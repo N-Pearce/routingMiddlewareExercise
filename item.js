@@ -29,7 +29,7 @@ class Item {
 
     static delete(name){
         let idx = items.findIndex(item => item.name === name)
-        if (!idx) throw new ExpressError('Not found', 404)
+        if (idx === -1) throw new ExpressError('Not found', 404)
         items.splice(idx,1)
     }
 }
